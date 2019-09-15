@@ -92,12 +92,11 @@ ASSIGN  : '=';
                 * LITERALS  *
                 ************/
 
-INTLIT      : [+-]? Digit+;
+INTLIT      : Digit+;
 FLOATLIT    : ( Digit+ (DOT | DOT? Exponent) Digit* ) | ( Digit* DOT Digit+ ( | Exponent) );
 BOOLEANLIT  : TRUE | FALSE; 
-STRINGLIT   : '"' ( '\\' [bfrnt"\\] | ~[\b\t\f\r\n\\"] )* '"' { self.text = self.text.lstrip('"').rstrip('"') };
-
-
+STRINGLIT   : '"' ( '\\' [btnfr"\\] | ~[\r\n\\"] )* '"' { self.text = self.text.lstrip('"').rstrip('"') };
+   
                 /*************
                 * SEPARATORS *
                 *************/
@@ -125,9 +124,9 @@ WS              : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
                 *   ERROR   *
                 ************/
 
-ILLEGAL_ESCAPE  : '"' ('\\' [btnfr"\\] | ~'\\')* ('\\' ~[btnfr"\\]) {self.text =  self.text.lstrip('"')};
+ILLEGAL_ESCAPE  : '"' ( '\\' [btnfr"\\] | ~'\\')* ('\\' ~[btnfr"\\]) {self.text =  self.text.lstrip('"')};
 
-UNCLOSE_STRING  : '"' ( '\\' [btnfr"\\] | ~[\b\t\f\r\n\\"] )* { self.text = self.text.lstrip('"') };
+UNCLOSE_STRING  : '"' ( '\\' [btnfr"\\] | ~[\r\n\\"] )* { self.text = self.text.lstrip('"') };
 
 ERROR_CHAR      : .;
 

@@ -5,7 +5,7 @@ class LexerSuite(unittest.TestCase):
       
     def test_lower_identifier(self):
         """test identifiers"""
-        self.assertTrue(TestLexer.checkLexeme("""int main() {}""","abc,<EOF>",101))
+        self.assertTrue(TestLexer.checkLexeme(""" abc ""","abc,<EOF>",101))
     def test_lower_upper_id(self):
         self.assertTrue(TestLexer.checkLexeme("aCBbdc","aCBbdc,<EOF>",102))
     def test_wrong_token(self):
@@ -54,7 +54,7 @@ class LexerSuite(unittest.TestCase):
         self.assertTrue(TestLexer.checkLexeme("1.2 1. .1 1e2 1.2E-2 1.2e-2 .1E2 9.0 12e8 0.33E-3 128e-42","1.2,1.,.1,1e2,1.2E-2,1.2e-2,.1E2,9.0,12e8,0.33E-3,128e-42,<EOF>",117))
     def test_floatlit2(self):
         """test floatlit"""
-        self.assertTrue(TestLexer.checkLexeme("143e e-12 .e2 e.2 15 1.564e-9abc","143,e,e,-12,.,e2,e,.2,15,1.564e-9,abc,<EOF>",118))
+        self.assertTrue(TestLexer.checkLexeme("143e e-12 .e2 e.2 15 1.564e-9abc","143,e,e,-,12,.,e2,e,.2,15,1.564e-9,abc,<EOF>",118))
     def test_floatlit3(self):
         """test floatlit"""
         self.assertTrue(TestLexer.checkLexeme("12.e12","12.e12,<EOF>",119))
@@ -69,4 +69,4 @@ class LexerSuite(unittest.TestCase):
         self.assertTrue(TestLexer.checkLexeme(""" 123 "12\\t3\\am123" ""","""123,Illegal Escape In String: 12\\t3\\a""",123))
     def test_double_slash(self):
         """test double slash"""
-        self.assertTrue(TestLexer.checkLexeme(""" 123 "123a\\\\123" ""","""123,123a\\\\123,<EOF>""",124))
+        self.assertTrue(TestLexer.checkLexeme(""" "abc\\\nabc" ""","""Illegal Escape In String: abc\\\n""",124))
