@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "antlr-debug",
+            "request": "launch",
+            "name": "Debug Current Grammar",
+            "input": "./initial/src/test/testcases/202.txt",   
+            "grammar": "./initial/src/main/mc/parser/MC.g4",         
+            "startRule": "query",
+            "printParseTree": true,
+            "visualParseTree": true
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
+            
