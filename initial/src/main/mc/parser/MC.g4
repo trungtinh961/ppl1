@@ -42,6 +42,8 @@ fragment Exponent       : [eE] SUB? Digit+ ;
 
 fragment Underscore  : '_';
 
+fragment Dot         : '.';
+
                 /************
                 *  KEYWORDS *
                 ************/
@@ -95,7 +97,7 @@ ASSIGN  : '=';
                 ************/
 
 INTLIT      : Digit+;
-FLOATLIT    : ( Digit+ (DOT | DOT? Exponent) Digit* ) | ( Digit* DOT Digit+ ( | Exponent) );
+FLOATLIT    : ( Digit+ (Dot | Dot? Exponent) Digit* ) | ( Digit* Dot Digit+ ( | Exponent) );
 BOOLEANLIT  : TRUE | FALSE; 
 STRINGLIT   : '"' ( '\\' [btnfr"\\] | ~[\r\n\\"] )* '"' { self.text = self.text.lstrip('"').rstrip('"') };
    
@@ -109,7 +111,6 @@ LB          : '{';
 RB          : '}';
 LSB         : '[';
 RSB         : ']';
-DOT         : '.';
 SEMI        : ';';
 CM          : ',';
 

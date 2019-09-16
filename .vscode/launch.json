@@ -10,7 +10,7 @@
             "name": "Debug Current Grammar",
             "input": "./initial/src/test/testcases/202.txt",   
             "grammar": "./initial/src/main/mc/parser/MC.g4",         
-            "startRule": "query",
+            "startRule": "program",
             "printParseTree": true,
             "visualParseTree": true
         },

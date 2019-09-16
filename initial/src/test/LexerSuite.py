@@ -84,7 +84,7 @@ class LexerSuite(unittest.TestCase):
         self.assertTrue(TestLexer.checkLexeme(""" 1.2 1. .1 1e2 1.2E-2 1.2e-2 ""","1.2,1.,.1,1e2,1.2E-2,1.2e-2,<EOF>",127))
     def test_floatl_2(self):
         """test floatl"""
-        self.assertTrue(TestLexer.checkLexeme(""" 143e e-12 .e2 e.2 15 1.564e-9abc ""","143,e,e,-,12,.,e2,e,.2,15,1.564e-9,abc,<EOF>",128))
+        self.assertTrue(TestLexer.checkLexeme(""" 143e e-12 .e2 e.2 15 1.564e-9abc ""","143,e,e,-,12,Error Token .",128))
     def test_floatl_3(self):
         """test floatl"""
         self.assertTrue(TestLexer.checkLexeme(""" .1E2 9.0 12e8 0.33E-3 128e-42 """,".1E2,9.0,12e8,0.33E-3,128e-42,<EOF>",129))
@@ -93,7 +93,7 @@ class LexerSuite(unittest.TestCase):
         self.assertTrue(TestLexer.checkLexeme(""" 12eE9 ""","12,eE9,<EOF>",130))
     def test_floatl_4(self):
         """test floatl"""
-        self.assertTrue(TestLexer.checkLexeme(""" .e5 """,".,e5,<EOF>",131))
+        self.assertTrue(TestLexer.checkLexeme(""" .e5 ""","Error Token .",131))
     def test_floatl_5(self):
         """test floatl"""
         self.assertTrue(TestLexer.checkLexeme(""" 1.2.3 ""","1.2,.3,<EOF>",132))
@@ -145,13 +145,37 @@ class LexerSuite(unittest.TestCase):
         """test line comment"""
         self.assertTrue(TestLexer.checkLexeme(""" //abc \\n bef ""","<EOF>",147))
 
-    def test_separators(self):
+    def test_separators_1(self):
         """test separators"""
-        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",105))
+        self.assertTrue(TestLexer.checkLexeme(""" [ba[b]a[ba][a]b[ab][a {12312}{123{}{}{ (abv12)(())(Aasd) ""","[,ba,[,b,],a,[,ba,],[,a,],b,[,ab,],[,a,{,12312,},{,123,{,},{,},{,(,abv12,),(,(,),),(,Aasd,),<EOF>",148))
+    def test_separators_2(self):
+        """test separators"""
+        self.assertTrue(TestLexer.checkLexeme(""" ..abcd....mnop...... ""","Error Token .",149))
+    def test_separators_3(self):
+        """test separators"""
+        self.assertTrue(TestLexer.checkLexeme(""" abc;def,nguyen;;, ""","abc,;,def,,,nguyen,;,;,,,<EOF>",150))
+    def test_separators_4(self):
+        """test separators"""
+        self.assertTrue(TestLexer.checkLexeme(""" //nguyen;';';'{{(([]))}} ""","<EOF>",151))
+    def test_separators_5(self):
+        """test separators"""
+        self.assertTrue(TestLexer.checkLexeme(""" { ] ( ; . , ""","{,],(,;,Error Token .",152))
 
-    def test_operators(self):
+    def test_operators_1(self):
         """test operators"""
-        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",105))
+        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",153))
+    def test_operators_2(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",154))
+    def test_operators_3(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",155))
+    def test_operators_4(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",156))
+    def test_operators_5(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",157))
 
     def test_string(self):
         """test string"""
