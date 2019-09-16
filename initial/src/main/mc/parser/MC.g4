@@ -27,7 +27,7 @@ def emit(self):
 }
 
 options{
-	language=Python3;
+	language=Java;
 }
 
                 /************

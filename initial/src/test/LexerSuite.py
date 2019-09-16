@@ -163,7 +163,7 @@ class LexerSuite(unittest.TestCase):
 
     def test_operators_1(self):
         """test operators"""
-        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",153))
+        self.assertTrue(TestLexer.checkLexeme(""" a = a + b ""","a,=,a,+,b,<EOF>",153))
     def test_operators_2(self):
         """test operators"""
         self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",154))
