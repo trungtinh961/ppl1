@@ -1,1 +1,1 @@
-123,abc,<EOF>
+boolean,if,main,int,float,return,string,<EOF>

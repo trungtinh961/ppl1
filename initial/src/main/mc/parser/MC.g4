@@ -40,6 +40,8 @@ fragment Digit          : [0-9];
 
 fragment Exponent       : [eE] SUB? Digit+ ;
 
+fragment Underscore  : '_';
+
                 /************
                 *  KEYWORDS *
                 ************/
@@ -66,7 +68,7 @@ STRINGTYPE      : 'string';
                 * IDENTIFIERS *
                 **************/
 
-ID : ( UNDERSCORE | Letter )( UNDERSCORE | Letter | Digit )*;
+ID : ( Underscore | Letter )( Underscore | Letter | Digit )*;
 
                 /************
                 * OPERATORS *
@@ -110,7 +112,7 @@ RSB         : ']';
 DOT         : '.';
 SEMI        : ';';
 CM          : ',';
-UNDERSCORE  : '_';
+
 
                 /************
                 *  COMMENT  *
@@ -168,7 +170,7 @@ expr8           : expr9 LSB RSB | expr9;
 expr9           : LP expr RP | operands;
 operands        : literal | ID | array_element | func_call;
 literal         : INTLIT | FLOATLIT | BOOLEANLIT | STRINGLIT;
-array_element   : (ID (LP INTLIT RP)?) LSB expr RSB;////////////////////////////////////
+array_element   : func_call LSB expr RSB;////////////////////////////////////
 
 func_call       : ID LP exprlist RP;
 exprlist        : (expr exprtail) ? ;
