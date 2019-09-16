@@ -48,13 +48,16 @@ class LexerSuite(unittest.TestCase):
         """test keywork"""
         self.assertTrue(TestLexer.checkLexeme(""" boolean break continue else for float if int return void do while true false string ""","boolean,break,continue,else,for,float,if,int,return,void,do,while,true,false,string,<EOF>",116))
 
-
-
-
-
-    def test_integer(self):
+    def test_integer_1(self):
         """test integers"""
-        self.assertTrue(TestLexer.checkLexeme("123a123","123,a123,<EOF>",104))
+        self.assertTrue(TestLexer.checkLexeme(""" 123a123 ""","123,a123,<EOF>",117))
+    def test_integer_2(self):
+        """test integers"""
+        self.assertTrue(TestLexer.checkLexeme(""" 13 -9 0 100 055 12222222 9999999999999 123aaaa abc123 ""","13 -9 0 100 055 12222222 9999999999999 123aaaa abc123,<EOF>",117))
+
+
+
+
 
     def test_block_comment1(self):
         """test block comment"""
