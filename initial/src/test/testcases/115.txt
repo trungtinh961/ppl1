@@ -1,1 +1,1 @@
-boolean if main int float return string
+ intEgeR Float StrIng BoOleaN 

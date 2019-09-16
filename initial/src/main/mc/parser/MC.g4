@@ -30,9 +30,9 @@ options{
 	language=Python3;
 }
 
-/************
-*   LEXER   *
-************/
+                /************
+                *   LEXER   *
+                ************/
 
 fragment Letter         : [a-zA-Z];
 

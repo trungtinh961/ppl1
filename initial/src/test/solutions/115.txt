@@ -1,1 +1,1 @@
-boolean,if,main,int,float,return,string,<EOF>
+intEgeR,Float,StrIng,BoOleaN,<EOF>

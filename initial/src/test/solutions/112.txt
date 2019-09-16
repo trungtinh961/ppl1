@@ -1,1 +1,1 @@
-abc,<EOF>
+Boolean,iF,mAin,iNt,fLoat,retuRn,string,<EOF>
