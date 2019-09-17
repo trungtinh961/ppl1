@@ -216,10 +216,10 @@ class LexerSuite(unittest.TestCase):
         self.assertTrue(TestLexer.checkLexeme(""" "abc\\babc\\fabc\\tabc" ""","""abc\\babc\\fabc\\tabc,<EOF>""",169))
     def test_string_8(self):
         """test string"""
-        self.assertTrue(TestLexer.checkLexeme(""" "\\\\\fabc\\\\rabc" ""","""\\\\abc\\\\rabc,<EOF>""",170))
+        self.assertTrue(TestLexer.checkLexeme(""" "\\\\\\fabc\\\\rabc" ""","""\\\\\\fabc\\\\rabc,<EOF>""",170))
     def test_string_9(self):
         """test string"""
-        self.assertTrue(TestLexer.checkLexeme(""" "abc\tabc\fabc\b" ""","""abc\tabc\fabc\b,<EOF>""",171))
+        self.assertTrue(TestLexer.checkLexeme(""" "abc\\tabc\\fabc\\b" ""","""abc\\tabc\\fabc\\b,<EOF>""",171))
     def test_string_10(self):
         """test string"""
         self.assertTrue(TestLexer.checkLexeme(""" "abc\"abc\\\\" ""","""abc,abc,Error Token \\""",172))
