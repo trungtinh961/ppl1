@@ -27,7 +27,7 @@ def emit(self):
 }
 
 options{
-	language=Java;
+	language=Python3;
 }
 
                 /************
@@ -47,7 +47,7 @@ fragment Dot         : '.';
                 /************
                 *  KEYWORDS *
                 ************/
-
+BOOLEANLIT  : TRUE | FALSE; 
 BOOLEANTYPE     : 'boolean';
 BREAK           : 'break';
 CONTINUE        : 'continue';

@@ -166,20 +166,63 @@ class LexerSuite(unittest.TestCase):
         self.assertTrue(TestLexer.checkLexeme(""" a = a + b ""","a,=,a,+,b,<EOF>",153))
     def test_operators_2(self):
         """test operators"""
-        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",154))
+        self.assertTrue(TestLexer.checkLexeme(""" 1 + a + 12.123 ""","1,+,a,+,12.123,<EOF>",154))
     def test_operators_3(self):
         """test operators"""
-        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",155))
+        self.assertTrue(TestLexer.checkLexeme(""" -123-abc ""","-,123,-,abc,<EOF>",155))
     def test_operators_4(self):
         """test operators"""
-        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",156))
+        self.assertTrue(TestLexer.checkLexeme(""" abc/*123 ""","abc,/,*,123,<EOF>",156))
     def test_operators_5(self):
         """test operators"""
-        self.assertTrue(TestLexer.checkLexeme("""  ""","<EOF>",157))
+        self.assertTrue(TestLexer.checkLexeme(""" abc!*/def ""","abc,!,*,/,def,<EOF>",157))
+    def test_operators_6(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme(""" abc%||&&!def ""","abc,%,||,&&,!,def,<EOF>",158))
+    def test_operators_7(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme(""" abc!=ngu==def ""","abc,!=,ngu,==,def,<EOF>",159))
+    def test_operators_8(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme(""" abc > def >= mne ""","abc,>,def,>=,mne,<EOF>",160))
+    def test_operators_9(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme(""" abc<def<=123 ""","abc,<,def,<=,123,<EOF>",161))
+    def test_operators_10(self):
+        """test operators"""
+        self.assertTrue(TestLexer.checkLexeme(""" abc=123+def/15*23%56 ""","abc,=,123,+,def,/,15,*,23,%,56,<EOF>",162))
 
-    def test_string(self):
+    def test_string_1(self):
         """test string"""
-        self.assertTrue(TestLexer.checkLexeme(""" "123a\\n123" ""","""123a\\n123,<EOF>""",120))
+        self.assertTrue(TestLexer.checkLexeme(""" "123a\\n123" ""","""123a\\n123,<EOF>""",163))
+    def test_string_2(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" abcdef"abc"123_15 ""","""abcdef,abc,123,_15,<EOF>""",164))
+    def test_string_3(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "abc?de~#f" ""","""abc?de~#f,<EOF>""",165))
+    def test_string_4(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "" """,""",<EOF>""",166))
+    def test_string_5(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "" """,""",<EOF>""",167))
+    def test_string_6(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "" """,""",<EOF>""",168))
+    def test_string_7(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "" """,""",<EOF>""",169))
+    def test_string_8(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "" """,""",<EOF>""",170))
+    def test_string_9(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "" """,""",<EOF>""",171))
+    def test_string_10(self):
+        """test string"""
+        self.assertTrue(TestLexer.checkLexeme(""" "" """,""",<EOF>""",172))
+    
 
     def test_unclose_string(self):
         """test unclose string"""
