@@ -42,9 +42,9 @@ def serializedATN():
         buf.write(")\3)\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3+\3+\3+\3,\3,\3,\3")
         buf.write("-\3-\5-\u0163\n-\3.\3.\3.\3/\3/\3/\3/\3/\2\6*,\62\64\60")
         buf.write("\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62")
-        buf.write("\64\668:<>@BDFHJLNPRTVXZ\\\2\t\6\2\3\3\b\b\n\n\21\21\3")
-        buf.write("\2\33\34\3\2\35 \3\2\23\24\4\2\25\26\30\30\4\2\24\24\27")
-        buf.write("\27\3\2\"%\2\u0163\2^\3\2\2\2\4d\3\2\2\2\6h\3\2\2\2\b")
+        buf.write("\64\668:<>@BDFHJLNPRTVXZ\\\2\t\6\2\7\7\f\f\16\16\25\25")
+        buf.write("\3\2\37 \3\2!$\3\2\27\30\4\2\31\32\34\34\4\2\30\30\33")
+        buf.write("\33\3\2\3\6\2\u0163\2^\3\2\2\2\4d\3\2\2\2\6h\3\2\2\2\b")
         buf.write("j\3\2\2\2\nn\3\2\2\2\fu\3\2\2\2\16w\3\2\2\2\20}\3\2\2")
         buf.write("\2\22\u0087\3\2\2\2\24\u008c\3\2\2\2\26\u0092\3\2\2\2")
         buf.write("\30\u0094\3\2\2\2\32\u009d\3\2\2\2\34\u00a2\3\2\2\2\36")
@@ -62,18 +62,18 @@ def serializedATN():
         buf.write("\t\2hf\3\2\2\2hg\3\2\2\2i\7\3\2\2\2jk\5\n\6\2kl\5\f\7")
         buf.write("\2lm\7,\2\2m\t\3\2\2\2no\t\2\2\2o\13\3\2\2\2pq\5\16\b")
         buf.write("\2qr\7-\2\2rs\5\f\7\2sv\3\2\2\2tv\5\16\b\2up\3\2\2\2u")
-        buf.write("t\3\2\2\2v\r\3\2\2\2w{\7\22\2\2xy\7*\2\2yz\7\"\2\2z|\7")
+        buf.write("t\3\2\2\2v\r\3\2\2\2w{\7\26\2\2xy\7*\2\2yz\7\3\2\2z|\7")
         buf.write("+\2\2{x\3\2\2\2{|\3\2\2\2|\17\3\2\2\2}~\5\22\n\2~\177")
-        buf.write("\7\22\2\2\177\u0080\7&\2\2\u0080\u0081\5\24\13\2\u0081")
+        buf.write("\7\26\2\2\177\u0080\7&\2\2\u0080\u0081\5\24\13\2\u0081")
         buf.write("\u0082\7\'\2\2\u0082\u0083\5\\/\2\u0083\21\3\2\2\2\u0084")
-        buf.write("\u0088\5\n\6\2\u0085\u0088\7\f\2\2\u0086\u0088\5\"\22")
+        buf.write("\u0088\5\n\6\2\u0085\u0088\7\20\2\2\u0086\u0088\5\"\22")
         buf.write("\2\u0087\u0084\3\2\2\2\u0087\u0085\3\2\2\2\u0087\u0086")
         buf.write("\3\2\2\2\u0088\23\3\2\2\2\u0089\u008a\5\30\r\2\u008a\u008b")
         buf.write("\5\26\f\2\u008b\u008d\3\2\2\2\u008c\u0089\3\2\2\2\u008c")
         buf.write("\u008d\3\2\2\2\u008d\25\3\2\2\2\u008e\u008f\7-\2\2\u008f")
         buf.write("\u0090\5\30\r\2\u0090\u0091\5\26\f\2\u0091\u0093\3\2\2")
         buf.write("\2\u0092\u008e\3\2\2\2\u0092\u0093\3\2\2\2\u0093\27\3")
-        buf.write("\2\2\2\u0094\u0095\5\n\6\2\u0095\u0098\7\22\2\2\u0096")
+        buf.write("\2\2\2\u0094\u0095\5\n\6\2\u0095\u0098\7\26\2\2\u0096")
         buf.write("\u0097\7*\2\2\u0097\u0099\7+\2\2\u0098\u0096\3\2\2\2\u0098")
         buf.write("\u0099\3\2\2\2\u0099\31\3\2\2\2\u009a\u009b\5\36\20\2")
         buf.write("\u009b\u009c\5\34\17\2\u009c\u009e\3\2\2\2\u009d\u009a")
@@ -82,21 +82,21 @@ def serializedATN():
         buf.write("\u009f\3\2\2\2\u00a2\u00a3\3\2\2\2\u00a3\35\3\2\2\2\u00a4")
         buf.write("\u00a7\5\b\5\2\u00a5\u00a7\5H%\2\u00a6\u00a4\3\2\2\2\u00a6")
         buf.write("\u00a5\3\2\2\2\u00a7\37\3\2\2\2\u00a8\u00a9\5\n\6\2\u00a9")
-        buf.write("\u00aa\7*\2\2\u00aa\u00ab\7\"\2\2\u00ab\u00ac\7+\2\2\u00ac")
+        buf.write("\u00aa\7*\2\2\u00aa\u00ab\7\3\2\2\u00ab\u00ac\7+\2\2\u00ac")
         buf.write("!\3\2\2\2\u00ad\u00b0\5$\23\2\u00ae\u00b0\5&\24\2\u00af")
         buf.write("\u00ad\3\2\2\2\u00af\u00ae\3\2\2\2\u00b0#\3\2\2\2\u00b1")
-        buf.write("\u00b2\5\n\6\2\u00b2\u00b3\7\22\2\2\u00b3\u00b4\7*\2\2")
+        buf.write("\u00b2\5\n\6\2\u00b2\u00b3\7\26\2\2\u00b3\u00b4\7*\2\2")
         buf.write("\u00b4\u00b5\7+\2\2\u00b5%\3\2\2\2\u00b6\u00b7\5\n\6\2")
         buf.write("\u00b7\u00b8\7*\2\2\u00b8\u00b9\7+\2\2\u00b9\'\3\2\2\2")
-        buf.write("\u00ba\u00bb\5*\26\2\u00bb\u00bc\7!\2\2\u00bc\u00bd\5")
+        buf.write("\u00ba\u00bb\5*\26\2\u00bb\u00bc\7%\2\2\u00bc\u00bd\5")
         buf.write("(\25\2\u00bd\u00c0\3\2\2\2\u00be\u00c0\5*\26\2\u00bf\u00ba")
         buf.write("\3\2\2\2\u00bf\u00be\3\2\2\2\u00c0)\3\2\2\2\u00c1\u00c2")
         buf.write("\b\26\1\2\u00c2\u00c3\5,\27\2\u00c3\u00c9\3\2\2\2\u00c4")
-        buf.write("\u00c5\f\4\2\2\u00c5\u00c6\7\31\2\2\u00c6\u00c8\5,\27")
+        buf.write("\u00c5\f\4\2\2\u00c5\u00c6\7\35\2\2\u00c6\u00c8\5,\27")
         buf.write("\2\u00c7\u00c4\3\2\2\2\u00c8\u00cb\3\2\2\2\u00c9\u00c7")
         buf.write("\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca+\3\2\2\2\u00cb\u00c9")
         buf.write("\3\2\2\2\u00cc\u00cd\b\27\1\2\u00cd\u00ce\5.\30\2\u00ce")
-        buf.write("\u00d4\3\2\2\2\u00cf\u00d0\f\4\2\2\u00d0\u00d1\7\32\2")
+        buf.write("\u00d4\3\2\2\2\u00cf\u00d0\f\4\2\2\u00d0\u00d1\7\36\2")
         buf.write("\2\u00d1\u00d3\5.\30\2\u00d2\u00cf\3\2\2\2\u00d3\u00d6")
         buf.write("\3\2\2\2\u00d4\u00d2\3\2\2\2\u00d4\u00d5\3\2\2\2\u00d5")
         buf.write("-\3\2\2\2\u00d6\u00d4\3\2\2\2\u00d7\u00d8\5\60\31\2\u00d8")
@@ -122,12 +122,12 @@ def serializedATN():
         buf.write("9\3\2\2\2\u0107\u0108\7&\2\2\u0108\u0109\5(\25\2\u0109")
         buf.write("\u010a\7\'\2\2\u010a\u010d\3\2\2\2\u010b\u010d\5<\37\2")
         buf.write("\u010c\u0107\3\2\2\2\u010c\u010b\3\2\2\2\u010d;\3\2\2")
-        buf.write("\2\u010e\u0113\5> \2\u010f\u0113\7\22\2\2\u0110\u0113")
+        buf.write("\2\u010e\u0113\5> \2\u010f\u0113\7\26\2\2\u0110\u0113")
         buf.write("\5@!\2\u0111\u0113\5B\"\2\u0112\u010e\3\2\2\2\u0112\u010f")
         buf.write("\3\2\2\2\u0112\u0110\3\2\2\2\u0112\u0111\3\2\2\2\u0113")
         buf.write("=\3\2\2\2\u0114\u0115\t\b\2\2\u0115?\3\2\2\2\u0116\u0117")
         buf.write("\5B\"\2\u0117\u0118\7*\2\2\u0118\u0119\5(\25\2\u0119\u011a")
-        buf.write("\7+\2\2\u011aA\3\2\2\2\u011b\u011c\7\22\2\2\u011c\u011d")
+        buf.write("\7+\2\2\u011aA\3\2\2\2\u011b\u011c\7\26\2\2\u011c\u011d")
         buf.write("\7&\2\2\u011d\u011e\5D#\2\u011e\u011f\7\'\2\2\u011fC\3")
         buf.write("\2\2\2\u0120\u0121\5(\25\2\u0121\u0122\5F$\2\u0122\u0124")
         buf.write("\3\2\2\2\u0123\u0120\3\2\2\2\u0123\u0124\3\2\2\2\u0124")
@@ -141,21 +141,21 @@ def serializedATN():
         buf.write("\2\2\2\u0133\u0130\3\2\2\2\u0133\u0131\3\2\2\2\u0133\u0132")
         buf.write("\3\2\2\2\u0134I\3\2\2\2\u0135\u0138\5L\'\2\u0136\u0138")
         buf.write("\5N(\2\u0137\u0135\3\2\2\2\u0137\u0136\3\2\2\2\u0138K")
-        buf.write("\3\2\2\2\u0139\u013a\7\t\2\2\u013a\u013b\7&\2\2\u013b")
+        buf.write("\3\2\2\2\u0139\u013a\7\r\2\2\u013a\u013b\7&\2\2\u013b")
         buf.write("\u013c\5(\25\2\u013c\u013d\7\'\2\2\u013d\u013e\5H%\2\u013e")
-        buf.write("\u013f\7\6\2\2\u013f\u0140\5H%\2\u0140M\3\2\2\2\u0141")
-        buf.write("\u0142\7\t\2\2\u0142\u0143\7&\2\2\u0143\u0144\5(\25\2")
+        buf.write("\u013f\7\n\2\2\u013f\u0140\5H%\2\u0140M\3\2\2\2\u0141")
+        buf.write("\u0142\7\r\2\2\u0142\u0143\7&\2\2\u0143\u0144\5(\25\2")
         buf.write("\u0144\u0145\7\'\2\2\u0145\u0146\5H%\2\u0146O\3\2\2\2")
-        buf.write("\u0147\u0149\7\r\2\2\u0148\u014a\5H%\2\u0149\u0148\3\2")
-        buf.write("\2\2\u014a\u014b\3\2\2\2\u014b\u0149\3\2\2\2\u014b\u014c")
-        buf.write("\3\2\2\2\u014c\u014d\3\2\2\2\u014d\u014e\7\16\2\2\u014e")
-        buf.write("\u014f\5(\25\2\u014fQ\3\2\2\2\u0150\u0151\7\7\2\2\u0151")
+        buf.write("\u0147\u0149\7\21\2\2\u0148\u014a\5H%\2\u0149\u0148\3")
+        buf.write("\2\2\2\u014a\u014b\3\2\2\2\u014b\u0149\3\2\2\2\u014b\u014c")
+        buf.write("\3\2\2\2\u014c\u014d\3\2\2\2\u014d\u014e\7\22\2\2\u014e")
+        buf.write("\u014f\5(\25\2\u014fQ\3\2\2\2\u0150\u0151\7\13\2\2\u0151")
         buf.write("\u0152\7&\2\2\u0152\u0153\5(\25\2\u0153\u0154\7,\2\2\u0154")
         buf.write("\u0155\5(\25\2\u0155\u0156\7,\2\2\u0156\u0157\5(\25\2")
         buf.write("\u0157\u0158\7\'\2\2\u0158\u0159\5H%\2\u0159S\3\2\2\2")
-        buf.write("\u015a\u015b\7\4\2\2\u015b\u015c\7,\2\2\u015cU\3\2\2\2")
-        buf.write("\u015d\u015e\7\5\2\2\u015e\u015f\7,\2\2\u015fW\3\2\2\2")
-        buf.write("\u0160\u0162\7\13\2\2\u0161\u0163\5(\25\2\u0162\u0161")
+        buf.write("\u015a\u015b\7\b\2\2\u015b\u015c\7,\2\2\u015cU\3\2\2\2")
+        buf.write("\u015d\u015e\7\t\2\2\u015e\u015f\7,\2\2\u015fW\3\2\2\2")
+        buf.write("\u0160\u0162\7\17\2\2\u0161\u0163\5(\25\2\u0162\u0161")
         buf.write("\3\2\2\2\u0162\u0163\3\2\2\2\u0163Y\3\2\2\2\u0164\u0165")
         buf.write("\5(\25\2\u0165\u0166\7,\2\2\u0166[\3\2\2\2\u0167\u0168")
         buf.write("\7(\2\2\u0168\u0169\5\32\16\2\u0169\u016a\7)\2\2\u016a")
@@ -175,24 +175,24 @@ class MCParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'boolean'", "'break'", "'continue'", 
+    literalNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "'boolean'", "'break'", "'continue'", 
                      "'else'", "'for'", "'float'", "'if'", "'int'", "'return'", 
                      "'void'", "'do'", "'while'", "'true'", "'false'", "'string'", 
                      "<INVALID>", "'+'", "'-'", "'*'", "'/'", "'!'", "'%'", 
                      "'||'", "'&&'", "'!='", "'=='", "'<'", "'>'", "'<='", 
-                     "'>='", "'='", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'('", "')'", "'{'", "'}'", "'['", "']'", 
+                     "'>='", "'='", "'('", "')'", "'{'", "'}'", "'['", "']'", 
                      "';'", "','" ]
 
-    symbolicNames = [ "<INVALID>", "BOOLEANTYPE", "BREAK", "CONTINUE", "ELSE", 
-                      "FOR", "FLOATTYPE", "IF", "INTTYPE", "RETURN", "VOIDTYPE", 
+    symbolicNames = [ "<INVALID>", "INTLIT", "FLOATLIT", "BOOLEANLIT", "STRINGLIT", 
+                      "BOOLEANTYPE", "BREAK", "CONTINUE", "ELSE", "FOR", 
+                      "FLOATTYPE", "IF", "INTTYPE", "RETURN", "VOIDTYPE", 
                       "DO", "WHILE", "TRUE", "FALSE", "STRINGTYPE", "ID", 
                       "ADD", "SUB", "MUL", "DIV", "NOT", "MOD", "OR", "AND", 
                       "NEQ", "EQ", "LESS", "GRATER", "LEQ", "GEQ", "ASSIGN", 
-                      "INTLIT", "FLOATLIT", "BOOLEANLIT", "STRINGLIT", "LP", 
-                      "RP", "LB", "RB", "LSB", "RSB", "SEMI", "CM", "BLOCK_COMMENT", 
-                      "LINE_COMMENT", "WS", "ILLEGAL_ESCAPE", "UNCLOSE_STRING", 
-                      "ERROR_CHAR" ]
+                      "LP", "RP", "LB", "RB", "LSB", "RSB", "SEMI", "CM", 
+                      "BLOCK_COMMENT", "LINE_COMMENT", "WS", "ILLEGAL_ESCAPE", 
+                      "UNCLOSE_STRING", "ERROR_CHAR" ]
 
     RULE_program = 0
     RULE_manydecls = 1
@@ -254,41 +254,41 @@ class MCParser ( Parser ):
                    "block_statement" ]
 
     EOF = Token.EOF
-    BOOLEANTYPE=1
-    BREAK=2
-    CONTINUE=3
-    ELSE=4
-    FOR=5
-    FLOATTYPE=6
-    IF=7
-    INTTYPE=8
-    RETURN=9
-    VOIDTYPE=10
-    DO=11
-    WHILE=12
-    TRUE=13
-    FALSE=14
-    STRINGTYPE=15
-    ID=16
-    ADD=17
-    SUB=18
-    MUL=19
-    DIV=20
-    NOT=21
-    MOD=22
-    OR=23
-    AND=24
-    NEQ=25
-    EQ=26
-    LESS=27
-    GRATER=28
-    LEQ=29
-    GEQ=30
-    ASSIGN=31
-    INTLIT=32
-    FLOATLIT=33
-    BOOLEANLIT=34
-    STRINGLIT=35
+    INTLIT=1
+    FLOATLIT=2
+    BOOLEANLIT=3
+    STRINGLIT=4
+    BOOLEANTYPE=5
+    BREAK=6
+    CONTINUE=7
+    ELSE=8
+    FOR=9
+    FLOATTYPE=10
+    IF=11
+    INTTYPE=12
+    RETURN=13
+    VOIDTYPE=14
+    DO=15
+    WHILE=16
+    TRUE=17
+    FALSE=18
+    STRINGTYPE=19
+    ID=20
+    ADD=21
+    SUB=22
+    MUL=23
+    DIV=24
+    NOT=25
+    MOD=26
+    OR=27
+    AND=28
+    NEQ=29
+    EQ=30
+    LESS=31
+    GRATER=32
+    LEQ=33
+    GEQ=34
+    ASSIGN=35
     LP=36
     RP=37
     LB=38
@@ -1029,7 +1029,7 @@ class MCParser ( Parser ):
             self.state = 155
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.BOOLEANTYPE) | (1 << MCParser.BREAK) | (1 << MCParser.CONTINUE) | (1 << MCParser.FOR) | (1 << MCParser.FLOATTYPE) | (1 << MCParser.IF) | (1 << MCParser.INTTYPE) | (1 << MCParser.RETURN) | (1 << MCParser.DO) | (1 << MCParser.STRINGTYPE) | (1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.LP) | (1 << MCParser.LB))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.BOOLEANTYPE) | (1 << MCParser.BREAK) | (1 << MCParser.CONTINUE) | (1 << MCParser.FOR) | (1 << MCParser.FLOATTYPE) | (1 << MCParser.IF) | (1 << MCParser.INTTYPE) | (1 << MCParser.RETURN) | (1 << MCParser.DO) | (1 << MCParser.STRINGTYPE) | (1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.LP) | (1 << MCParser.LB))) != 0):
                 self.state = 152
                 self.var_stmt()
                 self.state = 153
@@ -1081,7 +1081,7 @@ class MCParser ( Parser ):
             self.state = 160
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.BOOLEANTYPE) | (1 << MCParser.BREAK) | (1 << MCParser.CONTINUE) | (1 << MCParser.FOR) | (1 << MCParser.FLOATTYPE) | (1 << MCParser.IF) | (1 << MCParser.INTTYPE) | (1 << MCParser.RETURN) | (1 << MCParser.DO) | (1 << MCParser.STRINGTYPE) | (1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.LP) | (1 << MCParser.LB))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.BOOLEANTYPE) | (1 << MCParser.BREAK) | (1 << MCParser.CONTINUE) | (1 << MCParser.FOR) | (1 << MCParser.FLOATTYPE) | (1 << MCParser.IF) | (1 << MCParser.INTTYPE) | (1 << MCParser.RETURN) | (1 << MCParser.DO) | (1 << MCParser.STRINGTYPE) | (1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.LP) | (1 << MCParser.LB))) != 0):
                 self.state = 157
                 self.var_stmt()
                 self.state = 158
@@ -1136,7 +1136,7 @@ class MCParser ( Parser ):
                 self.state = 162
                 self.variable_decl()
                 pass
-            elif token in [MCParser.BREAK, MCParser.CONTINUE, MCParser.FOR, MCParser.IF, MCParser.RETURN, MCParser.DO, MCParser.ID, MCParser.SUB, MCParser.NOT, MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT, MCParser.LP, MCParser.LB]:
+            elif token in [MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT, MCParser.BREAK, MCParser.CONTINUE, MCParser.FOR, MCParser.IF, MCParser.RETURN, MCParser.DO, MCParser.ID, MCParser.SUB, MCParser.NOT, MCParser.LP, MCParser.LB]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 163
                 self.statement()
@@ -1935,7 +1935,7 @@ class MCParser ( Parser ):
                 self.state = 250
                 self.expr7()
                 pass
-            elif token in [MCParser.ID, MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT, MCParser.LP]:
+            elif token in [MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT, MCParser.ID, MCParser.LP]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 251
                 self.expr8()
@@ -2063,7 +2063,7 @@ class MCParser ( Parser ):
                 self.state = 263
                 self.match(MCParser.RP)
                 pass
-            elif token in [MCParser.ID, MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT]:
+            elif token in [MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT, MCParser.ID]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 265
                 self.operands()
@@ -2353,7 +2353,7 @@ class MCParser ( Parser ):
             self.state = 289
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.LP))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.LP))) != 0):
                 self.state = 286
                 self.expr()
                 self.state = 287
@@ -2514,7 +2514,7 @@ class MCParser ( Parser ):
                 self.state = 302
                 self.return_stmt()
                 pass
-            elif token in [MCParser.ID, MCParser.SUB, MCParser.NOT, MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT, MCParser.LP]:
+            elif token in [MCParser.INTLIT, MCParser.FLOATLIT, MCParser.BOOLEANLIT, MCParser.STRINGLIT, MCParser.ID, MCParser.SUB, MCParser.NOT, MCParser.LP]:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 303
                 self.expr_stmt()
@@ -2775,7 +2775,7 @@ class MCParser ( Parser ):
                 self.state = 329 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.BREAK) | (1 << MCParser.CONTINUE) | (1 << MCParser.FOR) | (1 << MCParser.IF) | (1 << MCParser.RETURN) | (1 << MCParser.DO) | (1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.LP) | (1 << MCParser.LB))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MCParser.INTLIT) | (1 << MCParser.FLOATLIT) | (1 << MCParser.BOOLEANLIT) | (1 << MCParser.STRINGLIT) | (1 << MCParser.BREAK) | (1 << MCParser.CONTINUE) | (1 << MCParser.FOR) | (1 << MCParser.IF) | (1 << MCParser.RETURN) | (1 << MCParser.DO) | (1 << MCParser.ID) | (1 << MCParser.SUB) | (1 << MCParser.NOT) | (1 << MCParser.LP) | (1 << MCParser.LB))) != 0)):
                     break
 
             self.state = 331

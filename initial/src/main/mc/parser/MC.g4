@@ -45,9 +45,18 @@ fragment Underscore  : '_';
 fragment Dot         : '.';
 
                 /************
+                * LITERALS  *
+                ************/
+
+INTLIT      : Digit+;
+FLOATLIT    : ( Digit+ (Dot | Dot? Exponent) Digit* ) | ( Digit* Dot Digit+ ( | Exponent) );
+BOOLEANLIT  : TRUE | FALSE; 
+STRINGLIT   : '"' ( '\\' [btnfr"\\] | ~["\r\n\\] )* '"' { self.text = self.text.lstrip('"').rstrip('"') };
+
+                /************
                 *  KEYWORDS *
                 ************/
-BOOLEANLIT      : TRUE | FALSE; 
+
 BOOLEANTYPE     : 'boolean';
 BREAK           : 'break';
 CONTINUE        : 'continue';
@@ -91,15 +100,6 @@ GRATER  : '>';
 LEQ     : '<=';
 GEQ     : '>=';
 ASSIGN  : '=';
-
-                /************
-                * LITERALS  *
-                ************/
-
-INTLIT      : Digit+;
-FLOATLIT    : ( Digit+ (Dot | Dot? Exponent) Digit* ) | ( Digit* Dot Digit+ ( | Exponent) );
-BOOLEANLIT  : TRUE | FALSE; 
-STRINGLIT   : '"' ( '\\' [btnfr"\\] | ~[\r\n\\"] )* '"' { self.text = self.text.lstrip('"').rstrip('"') };
    
                 /*************
                 * SEPARATORS *
@@ -127,7 +127,7 @@ WS              : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
                 *   ERROR   *
                 ************/
 
-ILLEGAL_ESCAPE  : '"' ( '\\' [btnfr"\\] | ~'\\')* ('\\' ~[btnfr"\\]) {self.text =  self.text.lstrip('"')};
+ILLEGAL_ESCAPE  : '"' ( '\\' [btnfr"\\] | ~[\\"])* ('\\' ~[btnfr"\\]) {self.text =  self.text.lstrip('"')};
 
 UNCLOSE_STRING  : '"' ( '\\' [btnfr"\\] | ~[\r\n\\"] )* { self.text = self.text.lstrip('"') };
 
