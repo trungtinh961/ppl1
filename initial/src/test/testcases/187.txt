@@ -1,0 +1,1 @@
+ /* this is a comment */ void foo() {if (a==0) {b = a+c}} 

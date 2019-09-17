@@ -47,7 +47,7 @@ fragment Dot         : '.';
                 /************
                 *  KEYWORDS *
                 ************/
-BOOLEANLIT  : TRUE | FALSE; 
+BOOLEANLIT      : TRUE | FALSE; 
 BOOLEANTYPE     : 'boolean';
 BREAK           : 'break';
 CONTINUE        : 'continue';
