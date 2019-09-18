@@ -59,11 +59,6 @@ class MCVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MCParser#parameter_tail.
-    def visitParameter_tail(self, ctx:MCParser.Parameter_tailContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MCParser#parameter_decl.
     def visitParameter_decl(self, ctx:MCParser.Parameter_declContext):
         return self.visitChildren(ctx)
@@ -71,11 +66,6 @@ class MCVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by MCParser#var_stmt_list.
     def visitVar_stmt_list(self, ctx:MCParser.Var_stmt_listContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MCParser#var_stmt_tail.
-    def visitVar_stmt_tail(self, ctx:MCParser.Var_stmt_tailContext):
         return self.visitChildren(ctx)
 
 
@@ -179,11 +169,6 @@ class MCVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MCParser#exprtail.
-    def visitExprtail(self, ctx:MCParser.ExprtailContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MCParser#statement.
     def visitStatement(self, ctx:MCParser.StatementContext):
         return self.visitChildren(ctx)
@@ -191,16 +176,6 @@ class MCVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by MCParser#if_stmt.
     def visitIf_stmt(self, ctx:MCParser.If_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MCParser#if_else.
-    def visitIf_else(self, ctx:MCParser.If_elseContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MCParser#if_no_else.
-    def visitIf_no_else(self, ctx:MCParser.If_no_elseContext):
         return self.visitChildren(ctx)
 
 

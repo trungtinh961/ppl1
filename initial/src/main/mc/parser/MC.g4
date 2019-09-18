@@ -145,11 +145,9 @@ variable            : ID (LSB INTLIT RSB)? ;
 
 function_decl       : func_type ID LP parameter_list RP block_statement ;
 func_type           : primitive_type | VOIDTYPE | output_array_pointer_type ;
-parameter_list      : (parameter_decl parameter_tail)? ;
-parameter_tail      : (CM parameter_decl parameter_tail)? ;
+parameter_list      : (parameter_decl (CM parameter_decl)*)? ;
 parameter_decl      : primitive_type ID (LSB RSB)? ;
-var_stmt_list       : (var_stmt var_stmt_tail) ? ;
-var_stmt_tail       : (var_stmt var_stmt_tail) ? ;
+var_stmt_list       : (var_stmt var_stmt*) ? ;
 var_stmt            : variable_decl | statement ;
 
 array                       : primitive_type ID LSB INTLIT RSB;
@@ -172,8 +170,7 @@ literal             : INTLIT | FLOATLIT | BOOLEANLIT | STRINGLIT;
 array_element       : (ID | func_call) LSB expr RSB;
 
 func_call           : ID LP exprlist RP;
-exprlist            : (expr exprtail) ? ;
-exprtail            : (CM expr exprtail) ? ;
+exprlist            : (expr (CM expr)*) ? ;
 
 statement           : if_stmt 
                     | for_stmt 
@@ -184,9 +181,7 @@ statement           : if_stmt
                     | expr_stmt
                     | block_statement
                     ;
-if_stmt             : if_else | if_no_else;
-if_else             : IF LP expr RP statement ELSE statement;
-if_no_else          : IF LP expr RP statement;
+if_stmt             : IF LP expr RP statement (ELSE statement)?;
 
 dowhile_stmt        : DO statement+ WHILE expr SEMI;
 
