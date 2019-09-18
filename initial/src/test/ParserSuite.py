@@ -24,9 +24,10 @@ class ParserSuite(unittest.TestCase):
         expect = "Error on line 1 col 10: {"
         self.assertTrue(TestParser.checkParser(input,expect,203))
 
-    def test_simple_program(self):
+    def test_simple_declaration(self):
         """Variable declaration"""
         input = """int i,j,k[5];"""
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,204))
+    
     
