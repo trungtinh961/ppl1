@@ -24,10 +24,27 @@ class ParserSuite(unittest.TestCase):
         expect = "Error on line 1 col 10: {"
         self.assertTrue(TestParser.checkParser(input,expect,203))
 
-    def test_simple_declaration(self):
+    def test_simple_declaration_1(self):
         """Variable declaration"""
         input = """int i,j,k[5];"""
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,204))
     
+    def test_simple_declaration_2(self):
+        """Variable declaration"""
+        input = """float f = 1.0;"""
+        expect = "Error on line 1 col 8: ="
+        self.assertTrue(TestParser.checkParser(input,expect,205))
+
+    def test_simple_declaration_3(self):
+        """Variable declaration"""
+        input = """int a[];"""
+        expect = "Error on line 1 col 6: ]"
+        self.assertTrue(TestParser.checkParser(input,expect,206))
+
+    def test_simple_declaration_3(self):
+        """Variable declaration"""
+        input = """int a[1]"""
+        expect = "Error on line 1 col 8: <EOF>"
+        self.assertTrue(TestParser.checkParser(input,expect,207))
     

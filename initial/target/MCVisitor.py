@@ -94,13 +94,13 @@ class MCVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MCParser#input_para.
-    def visitInput_para(self, ctx:MCParser.Input_paraContext):
+    # Visit a parse tree produced by MCParser#input_array_pointer_type.
+    def visitInput_array_pointer_type(self, ctx:MCParser.Input_array_pointer_typeContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MCParser#output_para.
-    def visitOutput_para(self, ctx:MCParser.Output_paraContext):
+    # Visit a parse tree produced by MCParser#output_array_pointer_type.
+    def visitOutput_array_pointer_type(self, ctx:MCParser.Output_array_pointer_typeContext):
         return self.visitChildren(ctx)
 
 
