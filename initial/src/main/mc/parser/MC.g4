@@ -167,7 +167,6 @@ expr8               : expr9 LSB expr RSB | expr9;
 expr9               : LP expr RP | operands;
 operands            : literal | ID | func_call;
 literal             : INTLIT | FLOATLIT | BOOLEANLIT | STRINGLIT;
-//array_element       : (ID | func_call) LSB expr RSB;
 
 func_call           : ID LP exprlist RP;
 exprlist            : (expr (CM expr)*) ? ;
