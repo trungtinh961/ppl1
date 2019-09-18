@@ -1,0 +1,8 @@
+
+        int main() {
+            if (a>b) {
+                int c[5];
+                c[2] = b + a * 10 % c[d[e[t+m+5]]];
+            }
+        }
+        

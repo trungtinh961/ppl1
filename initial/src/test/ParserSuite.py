@@ -406,8 +406,32 @@ class ParserSuite(unittest.TestCase):
     def test_statements_1(self):
         """ Statement """
         input = """
-        int a;
-        
+            int main() {
+            if (a>b) a=1;
+        }
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,242))
+
+    def test_statements_2(self):  
+        """ Statement """
+        input = """
+        int main() {
+            if (a>b) a=1; else a=0;
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,243))
+    
+    def test_statements_3(self):  
+        """ Statement """
+        input = """
+        int main() {
+            if (a>b) {
+                int c[5];
+                c[2] = b + a * 10 % c[d[e[t+m+5]]];
+            }
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,244))
