@@ -201,7 +201,7 @@ class LexerSuite(unittest.TestCase):
         self.assertTrue(TestLexer.checkLexeme(""" abcdef"abc"123_15 ""","""abcdef,abc,123,_15,<EOF>""",164))
     def test_string_3(self):
         """test string"""
-        self.assertTrue(TestLexer.checkLexeme(""" "abc?de~#f" ""","""abc?de~#f,<EOF>""",165))
+        self.assertTrue(TestLexer.checkLexeme(""" "abc?de~#f;}" ""","""abc?de~#f;},<EOF>""",165))
     def test_string_4(self):
         """test string"""
         self.assertTrue(TestLexer.checkLexeme(""" "/* nguyen trung tinh */" ""","""/* nguyen trung tinh */,<EOF>""",166))

@@ -1,0 +1,11 @@
+
+        int main(){
+            do {
+                int foo() {};
+            }
+            {
+                a+b;
+            }
+            while (a<5);
+        }
+        

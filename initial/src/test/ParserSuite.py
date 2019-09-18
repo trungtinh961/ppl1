@@ -435,3 +435,100 @@ class ParserSuite(unittest.TestCase):
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,244))
+
+    def test_statements_4(self):  
+        """ Statement """
+        input = """
+        void main(){ 
+            if (a) if (b) if (c) a; else a; else 
+        }
+        """
+        expect = "Error on line 4 col 8: }"
+        self.assertTrue(TestParser.checkParser(input,expect,245))
+
+    def test_statements_5(self):  
+        """ Statement """
+        input = """
+        int main(){
+            do {
+                int a[2];
+            }
+            {
+                a+b;
+            }
+            while (a<5);
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,246))
+
+    def test_statements_6(self):  
+        """ Statement """
+        input = """
+        int main(){
+            do {
+                int a[2];
+            }
+            {
+                a+b;
+            }
+            while a<5==9%7;
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,247))
+
+    def test_statements_7(self):  
+        """ Statement """
+        input = """
+        int main(){
+            do {
+                int foo() {};
+            }
+            {
+                a+b;
+            }
+            while (a<5);
+        }
+        """
+        expect = "Error on line 4 col 23: ("
+        self.assertTrue(TestParser.checkParser(input,expect,248))
+
+    def test_statements_8(self):  
+        """ Statement """
+        input = """
+        int main(){
+            do {
+                foo(5);
+            }
+            while (a<5);
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,249))
+
+    def test_statements_9(self):  
+        """ Statement """
+        input = """
+        int main(){
+            do {
+                foo(5);
+            }
+            int a = 5;
+        }
+        """
+        expect = "Error on line 6 col 12: int"
+        self.assertTrue(TestParser.checkParser(input,expect,250))
+
+    def test_statements_10(self):  
+        """ Statement """
+        input = """
+        int main(){
+            do {
+                foo(5);
+            }
+            while (a<5);
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,251))
