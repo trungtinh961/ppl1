@@ -1,0 +1,6 @@
+
+        void foo ( ) {
+            if(a<b) return ; 
+            else return 2; 
+        }       
+        
