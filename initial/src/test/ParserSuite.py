@@ -130,7 +130,7 @@ class ParserSuite(unittest.TestCase):
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,215))
 
-    def test_function_declaration_8(self):
+    def test_function_declaration_9(self):
         """Function declaration"""
         input = """
             void foo (int a, int b){
@@ -139,3 +139,150 @@ class ParserSuite(unittest.TestCase):
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,216))
+
+    def test_function_declaration_10(self):
+        """Function declaration"""
+        input = """
+            void foo (){
+                int a[m];
+            }
+        """
+        expect = "Error on line 3 col 22: m"
+        self.assertTrue(TestParser.checkParser(input,expect,217))
+
+    def test_function_declaration_11(self):
+        """Function declaration"""
+        input = """
+            void foo (){
+                int ;
+            }
+        """
+        expect = "Error on line 3 col 20: ;"
+        self.assertTrue(TestParser.checkParser(input,expect,218))
+
+    def test_function_declaration_12(self):
+        """Function declaration"""
+        input = """int main() {
+            boolean boo[2]={true,false};
+        }"""
+        expect = "Error on line 2 col 26: ="
+        self.assertTrue(TestParser.checkParser(input,expect,219))
+
+    def test_function_declaration_13(self):
+        """Function declaration"""
+        input = """
+        int foo (int a , float b[])
+        {
+            boolean c ;
+            int i ;
+            i = a + 3 ;
+            if (i > 0) {
+                int d ;
+                d = i + 3 ;
+                putInt(d) ;
+            }
+            return i ;
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,220))
+
+    def test_expressions_1(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a[];
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,221))
+    
+    def test_expressions_2(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a[][];
+        }
+        """
+        expect = "Error on line 3 col 15: ["
+        self.assertTrue(TestParser.checkParser(input,expect,222))
+
+    def test_expressions_3(self):
+        """ Expressions """
+        input = """
+        int main() {
+            []a;
+        }
+        """
+        expect = "Error on line 3 col 12: ["
+        self.assertTrue(TestParser.checkParser(input,expect,223))
+
+    def test_expressions_4(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a = !b + -a;
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,224))
+
+    def test_expressions_5(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a = b / c % d * e;
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,225))
+    
+    def test_expressions_6(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a = b + c - -d * e[a];
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,226))
+
+    def test_expressions_7(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a = b < c < d;
+        }
+        """
+        expect = "Error on line 3 col 22: <"
+        self.assertTrue(TestParser.checkParser(input,expect,227))
+
+    def test_expressions_8(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a = b < (c > d);
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,228))
+
+    def test_expressions_9(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a = b < c + d;
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,229))
+
+    def test_expressions_10(self):
+        """ Expressions """
+        input = """
+        int main() {
+            a = b < c == d;
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,230))

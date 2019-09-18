@@ -1,6 +1,0 @@
-int main(){
-            int a;
-            a=10=4=3;
-            print(a);
-        }
-        

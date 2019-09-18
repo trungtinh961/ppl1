@@ -1,10 +1,5 @@
-int main(){
-            do{
-                int a;
-                a=110;    
-            }
-            {
 
-            }while "string" ;
-          
+        int main() {
+            []a;
         }
+        

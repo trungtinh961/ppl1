@@ -1,6 +1,5 @@
-int main(){
-            if (n>1
-            {
-                printName();    
+
+            void foo (){
+                int ;
             }
-        }
+        
