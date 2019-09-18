@@ -154,11 +154,6 @@ class MCVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MCParser#array_element.
-    def visitArray_element(self, ctx:MCParser.Array_elementContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MCParser#func_call.
     def visitFunc_call(self, ctx:MCParser.Func_callContext):
         return self.visitChildren(ctx)

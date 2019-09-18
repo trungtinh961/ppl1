@@ -163,11 +163,11 @@ expr4               : expr5 (LESS | LEQ | GRATER | GEQ) expr5 | expr5;
 expr5               : expr5 (ADD | SUB) expr6 | expr6;
 expr6               : expr6 (DIV | MUL | MOD) expr7 | expr7;
 expr7               : (SUB | NOT) expr7 | expr8;
-expr8               : expr9 LSB RSB | expr9;
+expr8               : expr9 LSB expr RSB | expr9;
 expr9               : LP expr RP | operands;
-operands            : literal | ID | array_element | func_call;
+operands            : literal | ID | func_call;
 literal             : INTLIT | FLOATLIT | BOOLEANLIT | STRINGLIT;
-array_element       : (ID | func_call) LSB expr RSB;
+//array_element       : (ID | func_call) LSB expr RSB;
 
 func_call           : ID LP exprlist RP;
 exprlist            : (expr (CM expr)*) ? ;

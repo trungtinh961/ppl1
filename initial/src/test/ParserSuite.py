@@ -194,17 +194,17 @@ class ParserSuite(unittest.TestCase):
             a[];
         }
         """
-        expect = "successful"
+        expect = "Error on line 3 col 14: ]"
         self.assertTrue(TestParser.checkParser(input,expect,221))
     
     def test_expressions_2(self):
         """ Expressions """
         input = """
         int main() {
-            a[][];
+            a[1][2];
         }
         """
-        expect = "Error on line 3 col 15: ["
+        expect = "Error on line 3 col 16: ["
         self.assertTrue(TestParser.checkParser(input,expect,222))
 
     def test_expressions_3(self):
@@ -402,3 +402,12 @@ class ParserSuite(unittest.TestCase):
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,241))
+
+    def test_statements_1(self):
+        """ Statement """
+        input = """
+        int a;
+        
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,242))
