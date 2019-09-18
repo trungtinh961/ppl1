@@ -136,11 +136,11 @@ ERROR_CHAR          : .;
                 ************/   
 
 program             : manydecls EOF;
-manydecls           : decl manydecls | decl ;
+manydecls           : decl (decl)* ;
 decl                : variable_decl | function_decl ;
 variable_decl       : primitive_type many_variables SEMI ;
 primitive_type      : INTTYPE | FLOATTYPE | BOOLEANTYPE | STRINGTYPE ;
-many_variables      : variable CM many_variables | variable ;
+many_variables      : variable (CM variable)* ;
 variable            : ID (LSB INTLIT RSB)? ;
 
 function_decl       : func_type ID LP parameter_list RP block_statement ;

@@ -107,4 +107,35 @@ class ParserSuite(unittest.TestCase):
         expect = "Error on line 2 col 29: b"
         self.assertTrue(TestParser.checkParser(input,expect,213))
     
-    
+    def test_function_declaration_7(self):
+        """Function declaration"""
+        input = """
+            void foo (int b){
+                int a[-8];
+            }
+        """
+        expect = "Error on line 3 col 22: -"
+        self.assertTrue(TestParser.checkParser(input,expect,214))
+
+    def test_function_declaration_8(self):
+        """Function declaration"""
+        input = """
+            int main()
+            {
+                // printf() displays the string inside quotation
+                printf("Hello, World!");
+                return 0;
+            }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,215))
+
+    def test_function_declaration_8(self):
+        """Function declaration"""
+        input = """
+            void foo (int a, int b){
+                ruturn (a + b);
+            }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,216))
