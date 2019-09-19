@@ -1,0 +1,8 @@
+
+        int main() {
+            do {
+                if (b) a; 
+                continue;
+            } while a;
+        }
+        
