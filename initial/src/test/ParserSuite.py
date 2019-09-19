@@ -523,12 +523,126 @@ class ParserSuite(unittest.TestCase):
     def test_statements_10(self):  
         """ Statement """
         input = """
+        int a[0.5];
         int main(){
-            do {
-                foo(5);
+            value = func()[0.5];
+        }
+        """
+        expect = "Error on line 2 col 14: 0.5"
+        self.assertTrue(TestParser.checkParser(input,expect,251))
+
+    def test_statements_11(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for(i = 0; i < 10; i=i+1) {
+                printf("Hello world!\\n");
             }
-            while (a<5);
         }
         """
         expect = "successful"
-        self.assertTrue(TestParser.checkParser(input,expect,251))
+        self.assertTrue(TestParser.checkParser(input,expect,252))
+        
+    def test_statements_12(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for(int i = 0; i < 10; i = i + 1) {
+                printf("Hello world!\\n");
+            }
+        }
+        """
+        expect = "Error on line 3 col 16: int"
+        self.assertTrue(TestParser.checkParser(input,expect,253))
+    
+    def test_statements_13(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for {i = 0; i < 10; i = i + 1} {
+                printf("Hello world!\\n");
+            }
+        }
+        """
+        expect = "Error on line 3 col 16: {"
+        self.assertTrue(TestParser.checkParser(input,expect,254))
+
+    
+    def test_statements_14(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for(i = 0; i < foo(2)[foo(4)[a+b+c]]; i = i + 1) {
+                printf("Hello world!\\n");
+            }
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,255))
+
+    
+    def test_statements_15(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for (i = 0; i < 10) {
+                printf("Hello world!\\n");
+            }
+        }
+        """
+        expect = "Error on line 3 col 30: )"
+        self.assertTrue(TestParser.checkParser(input,expect,256))
+
+    def test_statements_16(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for (i = 0; i < 10; i = i + 1) {
+                printf("Hello world!\\n");
+            }
+            {
+
+            }
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,257))
+    
+    def test_statements_17(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for (i = 0; i < 10; i = i + 1) {
+                for (j = 10; j >= 0; j = j - 1) {
+                    if (i == j) print("i");
+                }
+            }
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,258))
+
+    def test_statements_18(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for (i = 0; i < 10; i = i + 1) {
+                for (j = 10; j >= 0; j = j - 1) {
+                    if (i == j) return 0;
+                    else return 1;
+                }
+            }
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.checkParser(input,expect,259))
+    
+    def test_statements_19(self):  
+        """ Statement """
+        input = """        
+        int main(){
+            for (i = 0; i < 10; i = i + 1)
+        }
+        """
+        expect = "Error on line 4 col 8: }"
+        self.assertTrue(TestParser.checkParser(input,expect,260))

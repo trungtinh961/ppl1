@@ -1,0 +1,6 @@
+
+        int a[0.5];
+        int main(){
+            value = func()[0.5];
+        }
+        
