@@ -1,3 +1,9 @@
 
-        int main() {}
+        int main() {
+            do 
+                do
+                {}
+                while (a);
+            while(b);
+        }
         

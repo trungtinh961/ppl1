@@ -931,7 +931,13 @@ class ParserSuite(unittest.TestCase):
     def test_all_25(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            do 
+                do
+                {}
+                while (a);
+            while(b);
+        }
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,287))
@@ -939,7 +945,7 @@ class ParserSuite(unittest.TestCase):
     def test_all_26(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {{{{{{{{{}}}}}}}}}
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,288))
@@ -947,7 +953,15 @@ class ParserSuite(unittest.TestCase):
     def test_all_27(self):  
         """ All """
         input = """
-        int main() {}
+        boolean IsPrime(int number)
+        {
+            for (i = 2; i < number; i = i + 1)
+            {
+                if (number % i == 0 && i != number)
+                    return false;
+            }
+            return true;
+        }
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,289))
@@ -955,7 +969,9 @@ class ParserSuite(unittest.TestCase):
     def test_all_28(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            if (a == f[0]) print(a);
+        }
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,290))
@@ -963,7 +979,9 @@ class ParserSuite(unittest.TestCase):
     def test_all_29(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            for(a;a;a) return;
+        }
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,291))
@@ -971,63 +989,74 @@ class ParserSuite(unittest.TestCase):
     def test_all_30(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            for(a;b;c) ;
+        }
         """
-        expect = "successful"
+        expect = "Error on line 3 col 23: ;"
         self.assertTrue(TestParser.checkParser(input,expect,292))
 
     def test_all_31(self):  
         """ All """
         input = """
-        int main() {}
+        int foo[5] {a=b+c;}
         """
-        expect = "successful"
+        expect = "Error on line 2 col 19: {"
         self.assertTrue(TestParser.checkParser(input,expect,293))
 
     def test_all_32(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            int foo[]() {a=b+c;}
+        }
         """
-        expect = "successful"
+        expect = "Error on line 3 col 20: ]"
         self.assertTrue(TestParser.checkParser(input,expect,294))
 
     def test_all_33(self):  
         """ All """
         input = """
-        int main() {}
+        int a,b,c,d[5][15];
         """
-        expect = "successful"
+        expect = "Error on line 2 col 22: ["
         self.assertTrue(TestParser.checkParser(input,expect,295))
 
     def test_all_34(self):  
         """ All """
         input = """
-        int main() {}
+        int main()(a = b + c;)
         """
-        expect = "successful"
+        expect = "Error on line 2 col 18: ("
         self.assertTrue(TestParser.checkParser(input,expect,296))
 
     def test_all_35(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            int a, b ,c;
+            int foo() {a = b + c;}
+        }
         """
-        expect = "successful"
+        expect = "Error on line 4 col 19: ("
         self.assertTrue(TestParser.checkParser(input,expect,297))
 
     def test_all_36(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            printf("Illigal Escape: \\a");
+        }
         """
-        expect = "successful"
+        expect = "Illigal Escape: \\a"
         self.assertTrue(TestParser.checkParser(input,expect,298))
 
     def test_all_37(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            printf("Error char: ~`$^.@");
+        }
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,299))
@@ -1035,7 +1064,9 @@ class ParserSuite(unittest.TestCase):
     def test_all_38(self):  
         """ All """
         input = """
-        int main() {}
+        int main() {
+            // final /*...........\\n...........\\r...*/ \\n int a = 5;
+        }
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,300))
