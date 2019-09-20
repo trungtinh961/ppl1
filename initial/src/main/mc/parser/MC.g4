@@ -51,7 +51,7 @@ fragment Dot         : '.';
 INTLIT              : Digit+;
 FLOATLIT            : ( Digit+ (Dot | Dot? Exponent) Digit* ) | ( Digit* Dot Digit+ ( | Exponent) );
 BOOLEANLIT          : TRUE | FALSE; 
-STRINGLIT           : '"' ( '\\' [btnfr"\\] | ~["\r\n\\] )* '"' { self.text = self.text.lstrip('"').rstrip('"') };
+STRINGLIT           : '"' ( '\\' [btnfr"\\] | ~["\r\n\\] )* '"' { self.text = self.text[1:-1] };
 
                 /************
                 *  KEYWORDS *
@@ -125,9 +125,9 @@ WS                  : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
                 *   ERROR   *
                 ************/
 
-ILLEGAL_ESCAPE      : '"' ( '\\' [btnfr"\\] | ~[\\"])* ('\\' ~[btnfr"\\]) {self.text =  self.text.lstrip('"')};
+ILLEGAL_ESCAPE      : '"' ( '\\' [btnfr"\\] | ~[\\"\n\r])* ('\\' ~[btnfr"\\]) {self.text =  self.text.lstrip('"')};
 
-UNCLOSE_STRING      : '"' ( '\\' [btnfr"\\] | ~[\r\n\\"] )* { self.text = self.text.lstrip('"') };
+UNCLOSE_STRING      : '"' ( '\\' [btnfr"\\] | ~[\r\n\\"] )*('\\')? { self.text = self.text.lstrip('"') };
 
 ERROR_CHAR          : .;
 
