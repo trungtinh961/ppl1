@@ -1070,5 +1070,3 @@ class ParserSuite(unittest.TestCase):
         """
         expect = "successful"
         self.assertTrue(TestParser.checkParser(input,expect,300))
-
-
